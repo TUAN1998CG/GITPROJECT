@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th> From Currency </th>
+        <th> To Currency</th>
+    </tr>
+<td>
+    <input type="number" id="Amount">
+</td>
+        <td>
+            <select id="From">
+                    <option value="VND">VND </option>
+                    <option value='USD'>USD </option>
+            </select>
+        </td>
+        <td>
+            <select id="To">
+                <option value="VND">VND </option>
+                <OPTION value="USD">USD </OPTION>
+            </select>
+        </td>
+        <td>
+            <button onclick="Chuyển()">Chuyển </button>
+        </td>
+    </tr>
+</table>
+<p id="Chuyển"></p>
+<script>
+    function Chuyển() {
+        let Amount = document.getElementById('Amount').value;
+        let To = document.getElementById('To').value;
+        let From = document.getElementById("From").value;
+        let Chuyển;
+        if (From == 'USD' && To == 'VND') {
+            Chuyển= 'Chuyển:' + (Amount * 23000) + 'Đ';}
+            else if (From=='VND' && To=='USD'){
+                Chuyển='Chuyển' + (Amount/23000) + '$';
+
+            }
+
+        document.getElementById('Chuyển').innerHTML=Chuyển;
+    }
+
+</script>
+
+
+</body>
+</html>
