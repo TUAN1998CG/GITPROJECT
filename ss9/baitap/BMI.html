@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let weigh = parseFloat(prompt('Enter Weigh'));
+    let height = parseFloat(prompt('Enter height'));
+    let BMI = weigh / (match.pow(height, 2))
+    document.write('BMI=' + BMI)
+    if (BMI < 18) {
+        document.write("Underweight");
+    } else if (BMI < 25.00) {
+        document.write("Normal");
+    } else if (BMI < 30.00) {
+        document.write('Overweight');
+    } else {
+        document.write('Obese');
+    }
+</script>
 </body>
 </html>
