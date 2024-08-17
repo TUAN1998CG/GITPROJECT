@@ -1,10 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>CaseStudy của Tuấn</title>
+    <style>
+        {margin:0;
+        padding: 0;
+        box-sizing: border-box}
+        html{
+            font-size: 62.5%;
+            font-family: Verdana,Geneva,Tahoma,sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: center;
+        }
+        .Co{
+            background-color: #ffffff;
+            max-width: 40rem;
+            margin: 4rem auto;
+            padding: 2.4rem 2rem ;
+            border-radius: 5rem ;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        h2{
+            font-size:3rem;
+            width: 100%;
+
+        }
+        input{
+            width: 100%;
+            padding: 0.6rem;
+            font-size: 2.0rem;
+            border-radius: 5px ;
+            border: 1px solid#5f6062;
+            margin-bottom: 3.0rem;
+        }
+        button{
+            font-size: 2rem;
+            color: #000000;
+        }
+        label{
+            display: inline-block;
+            font-size: 2.0rem;
+            margin-bottom: 0.8rem;
+        }
+
+    </style>
 </head>
 <body>
-$END$
+<div class="Co">
+    <h1><img style="height: 60px" src="data:image/png;base64,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"></h1>
+<h2><img style="height: 90px"  src="//theme.hstatic.net/1000375557/1001056558/14/logo.png?v=409"></h2>
+    <label>Tài khoản </label><br>
+    <input type="text" id='Admin' placeholder="Nhập tài khoản"> <br>
+    <label>Mật khẩu  </label> <br>
+    <input type="password" id="Password" placeholder="Nhập mật khẩu" ><br>
+<button onclick="Login()">Đăng nhập</button>
+</div>
+<script>
+    function Login() {
+        let userName=document.getElementById('Admin').value;
+        let passWord=document.getElementById('Password').value;
+        if(userName==='admin'&& passWord==='123') {
+            alert('Đăng nhập thành công ')
+            window.location.href="CS1.html"
+        } else if(userName==='admin' && passWord===""){
+            alert('Đăng nhập sai , vui lòng thử lại')
+        }else if(userName!=='admin'){
+            alert('Đăng nhập sai , vui lòng thử lại')
+        }
+        else if(userName==='admin' && passWord !=='123') {
+            alert('Đăng nhập sai , vui lòng thử lại')
+
+        }
+        document.getElementById('Admin').value = ""
+        document.getElementById("Password").value =""
+    }
+</script>
+
 </body>
 </html>
