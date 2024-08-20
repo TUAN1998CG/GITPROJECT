@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [1, 2, 3, 4, 5, 6];
+    let k = 5;
+    function tongK(arr, k) {
+        let count = 0;
+        let n = arr.length;
+        for (let i = 0; i < n; i++) {
+            for (let j = i + 1; j < n; j++) {
+                let sum = arr[i] + arr[j];
+                if (sum % k === 0) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    console.log(tongK(array, k));
+
+
+</script>
+</body>
+</html>

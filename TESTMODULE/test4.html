@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bảng danh sách khách hàng </h1>
+<input type="text" id="Code" placeholder="Nhập mã khách hàng">
+<input type="text" id="Name" placeholder="Nhập tên khách hàng">
+<input type="number" id="Phone" placeholder="Nhập số điện thoại khách hàng">
+<input type="text" id="Addr" placeholder="Nhập địa chỉ khách hàng">
+<input type="text" id="Email" placeholder="Nhập email khách hàng">
+<button onclick="Add()">Add</button>
+<table>
+    <thead>
+    <tr>
+        <th>Mã khách hàng</th>
+        <th>Tên khách hàng</th>
+        <th>Số điện thoại</th>
+        <th>Địa chỉ</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+</table>
+<script>
+    class Information {
+        constructor(Code, Name, Phone, Addr, Email) {
+            this.code = Code
+            this.name = Name
+            this.phone = Phone
+            this.addr = Addr
+            this.email = Email
+        }
+
+        setCode(code) {
+            this.code = code
+        }
+
+        getCode() {
+            return this.code
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setPhone(phone) {
+            this.phone = phone
+        }
+
+        getPhone() {
+            return this.phone
+        }
+
+        setAddr(addr) {
+            this.addr = addr
+        }
+
+        getAddr() {
+            return this.addr
+        }
+
+        setEmail(email) {
+            this.email = email
+        }
+
+        getEmail() {
+            return this.email
+        }
+    }
+
+    let Person1 = new Information("P01", "Nguyen Van A", "01245", "Ha Noi", "nguyenvanA@gmail.com")
+    let Person2 = new Information("P02", "Nguyen Van B", "01215", "Quang Nam", "nguyenvanB@gmail.com")
+    let arr = [Person1, Person2]
+
+    function displayInfo(arr) {
+        let str = ""
+        for (let i = 0; i < arr.length; i++) {
+            str += "<tr>" +
+                "<td>" + arr[i].getCode() + "</td>" +
+                "<td>" + arr[i].getName() + "</td>" +
+                "<td>" + arr[i].getPhone() + "</td>" +
+                "<td>" + arr[i].getAddr() + "</td>" +
+                "<td>" + arr[i].getEmail() + "</td>" +
+                "</tr>"
+        }
+        document.getElementById('tbody').innerHTML = str
+    }
+
+    displayInfo(arr)
+
+    function Add() {
+        let productCode = document.getElementById('Code').value;
+        let productName = document.getElementById('Name').value;
+        let productPhone = document.getElementById('Phone').value;
+        let productAdd = document.getElementById('Addr').value;
+        let productEmail = document.getElementById('Email').value;
+        let info = new Information(productCode, productName, productPhone, productAdd, productEmail);
+        arr.push(info)
+        document.getElementById('Code').value = ""
+        document.getElementById('Name').value = ""
+        document.getElementById('Phone').value = ""
+        document.getElementById('Addr').value = ""
+        document.getElementById('Email').value = ""
+        displayInfo(arr)
+    }
+</script>
+</body>
+</html>
